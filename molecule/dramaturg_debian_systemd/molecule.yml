@@ -1,0 +1,26 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: dramaturg_debian_systemd_klar
+    image: dramaturg/debian-systemd
+    privileged: True
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    command: sleep infinity
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  options:
+    extra-vars: force_docker=yes
+scenario:
+  name: dramaturg_debian_systemd
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

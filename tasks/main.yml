@@ -1,0 +1,23 @@
+---
+# tasks file for klar
+- name: Download klar binary
+  get_url:
+    url: "https://github.com/optiopay/klar/releases/download/v{{ klar_version }}/klar-{{ klar_version }}-{{ architecture}}"
+    dest: /tmp/klar
+  changed_when: False
+
+- name: Copy klar binary to path
+  become: yes
+  copy:
+    src: /tmp/klar
+    dest: /usr/local/bin/klar
+    remote_src: true
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Delete temporary file
+  file:
+    path: /tmp/klar
+    state: absent
+  changed_when: False
