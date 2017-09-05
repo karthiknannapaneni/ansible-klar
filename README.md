@@ -25,7 +25,7 @@ Example Playbook
 ```yaml
 - hosts: servers
   roles:
-	 - { role: klar }
+  - { role: klar }
 ```
 
 License
