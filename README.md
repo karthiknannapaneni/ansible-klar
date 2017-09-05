@@ -12,7 +12,7 @@ Role Variables
 --------------
 
 * `klar_version`: Klar version. [Default: 1.4.1]
-* `architecture`: The binary architecture. [Default: linux-amd64]
+* `architecture`: The binary architecture. The options are `osx-amd64` or `linux-amd64`. [Default: linux-amd64]
 
 Dependencies
 ------------
