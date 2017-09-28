@@ -1,0 +1,4 @@
+---
+# defaults file for klar
+klar_version: 1.4.1
+architecture: linux-amd64

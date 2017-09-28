@@ -1,0 +1,11 @@
+# Molecule managed
+
+---
+all:
+  hosts:
+    geerlingguy_docker_debian9_ansible_klar: &id001
+      ansible_connection: docker
+ungrouped:
+  hosts:
+    geerlingguy_docker_debian9_ansible_klar: *id001
+  vars: {}
